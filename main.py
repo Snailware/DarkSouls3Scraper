@@ -22,7 +22,7 @@ class Timer:
         # get time since epoch.
 
     def stop(self):
-    # stop timing and return elapsed time.
+    # stop timing and return formatted elapsed time.
 
         stop_time = time()
         # get time since epoch.
@@ -61,6 +61,7 @@ class DarkSouls3WeaponScraper:
         self.timer = Timer()
         self.timer.start()
         print("starting scrape now...")
+        # start timer and display starting notification.
 
         self.typeScrape()
         # begin scrape.
@@ -191,4 +192,4 @@ class DarkSouls3WeaponScraper:
         csv_file.close()
         # close file. 
 
-DS = DarkSouls3WeaponScraper()
+scraper = DarkSouls3WeaponScraper()
