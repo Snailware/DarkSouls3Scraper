@@ -24,14 +24,19 @@ class Timer:
     def stop(self):
     # stop timing and return elapsed time.
 
-        self.stop_time = time()
+        stop_time = time()
         # get time since epoch.
 
-        self.exact_elapsed_time = self.stop_time - self.start_time
-        self.elapsed_time = float("{:.2f}".format(self.exact_elapsed_time))
+        exact_elapsed_time = stop_time - self.start_time
+        elapsed_time = float("{:.2f}".format(exact_elapsed_time))
         # calculate and round elapsed time to 2 decimal places.
 
-        return self.elapsed_time
+        elapsed_minutes = int(elapsed_time / 60)
+        elapsed_seconds = "{:.2f}".format(elapsed_time % 60)
+        output = f"{elapsed_minutes}:{elapsed_seconds}"
+        # format time output.
+
+        return output
         # return elapsed time. 
 
 class DarkSouls3WeaponScraper:
@@ -78,7 +83,7 @@ class DarkSouls3WeaponScraper:
         parsed_page = bs(raw_page.content, 'html.parser')
         # make request and parse returned html.
 
-        print(f"received {page} info in approx {timer.stop()} seconds...")
+        print(f"received {page} info in approx {timer.stop()}")
         # display receipt notification.
 
         return parsed_page
@@ -159,7 +164,7 @@ class DarkSouls3WeaponScraper:
                 self.weapon_entries.append(individual_entry)
                 # append full weapon entry to weapon entry list.
         
-        print(f"finished scrape in approx {self.timer.stop()} seconds.")
+        print(f"finished scrape in approx {self.timer.stop()}")
         # stop timer and display finish time notification.
 
         self.logOutput()
