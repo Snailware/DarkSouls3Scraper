@@ -1,187 +1,189 @@
 # program will scrape the Dark Souls 3 fextralife wiki page for detailed 
 # weapon information. data will then be formatted and saved into this programs
-# folder, as a TSV file. 
-#
-# execution time reduced from 367 seconds to 226 seconds. 
-#
+# folder, as a CSV file. 
 
-import requests
-import threading
-import time
-from bs4 import BeautifulSoup
+from requests import get
+from requests.compat import urljoin
+from time import time, sleep
+from bs4 import BeautifulSoup as bs
+from csv import writer
 
-DS3_WIKI = "https://darksouls3.wiki.fextralife.com/"
-# Dark Souls 3 Wiki page base URL + /.
+class Timer:
+    def __init__(self):
+    # simple timer.
 
-TSV_FILE = "Dark_Souls_3_Weapons_List.tsv"
-# title of file to be created. 
+        pass
+        # do nothing.
 
-TIME_DELAY = 5
-# amount of time in seconds to pause between requests. prevents throttling. 
+    def start(self):
+    # start timing.
 
-weaponEntries = []
-# weapon entry list. global to allow easier access from both threads. 
+        self.start_time = time()
+        # get time since epoch.
 
-def main():
+    def stop(self):
+    # stop timing and return elapsed time.
 
-    startTime = time.time()
-    print('starting timer now.')
-    # display timer notification.
+        self.stop_time = time()
+        # get time since epoch.
 
-    weapon_types = weaponTypeScraper()
-    # scrape weapon types from main weapon page. 
+        self.exact_elapsed_time = self.stop_time - self.start_time
+        self.elapsed_time = float("{:.2f}".format(self.exact_elapsed_time))
+        # calculate and round elapsed time to 2 decimal places.
 
-    scraper(weapon_types)
-    # scrape weapon tables from weapon type pages.
+        return self.elapsed_time
+        # return elapsed time. 
 
-    # weaponTableScraper(weapon_types)
-    # scrape weapon tables from weapon type pages.
-    # NOTE this function has multithreading that causes throttling.
+class DarkSouls3WeaponScraper:
+    def __init__(self):
+    # scraper for dark souls 3 weapon information.
 
-    elapsedTime = time.time() - startTime
-    print('total execution time is {:.2f}'.format(elapsedTime))
-    # stop timer and display execution time. 
+        self.TIME_DELAY = 5
+        # delay (in seconds) between requests to prevent throttling.
 
-    logOutput()
-    # write table to TSV file. 
+        self.BASE_URL = "https://darksouls3.wiki.fextralife.com"
+        # base URL for ds3 wiki.
 
-    exit()
-    # exit program. 
+        self.CSV_LOG = "ds3_weapon_data.csv"
+        # csv output file. 
 
-def weaponTypeScraper():
-# scrape main weapons page and return list of weapon type entries. 
+        self.weapon_types = []
+        # list for weapon types.
 
-    typeList = []
-    # initialize list for weapon types. 
+        self.weapon_entries = []
+        # list for weapons.
 
-    mainWeaponPage = pageParser("Weapons")
-    rawTypeList = mainWeaponPage.findAll("h3")
-    # navigate to weapons page and get all h3 tags. 
-    
-    for entry in rawTypeList:
-        if entry.text == "How to choose a weapon in Dark Souls?" or \
-            entry.text == "\nJoin the page discussion\nTired of anon "+\
-            "posting? Register!\n":
-                pass
-        # filter out results that arent weapon types. 
+        self.timer = Timer()
+        self.timer.start()
+        print("starting scrape now...")
 
-        elif entry.text == "Whips & Flails":
-            typeList.append("Whips")
-        # change "whips & flails" entry to just "whips" for proper navigation.
+        self.typeScrape()
+        # begin scrape.
 
-        elif entry.text == "Flames, Talismans & Chimes":
-            typeList.append("Flames")
-            typeList.append("Talismans")
-            typeList.append("Chimes")
-        # split "flames, talismans & chimes" entry into 3 seperate entries.
+    def parsePage(self, page):
+    # go to desired page on ds3 wiki and return parsed page object.
+
+        url = urljoin(self.BASE_URL, page)
+        # construct URL for page scrape. 
+
+        sleep(self.TIME_DELAY)
+        # pause to prevent throttling.
+
+        timer = Timer()
+        timer.start()
+        print(f"requesting {page} info...")
+        # start timer and display request notification.
+
+        raw_page = get(url)
+        parsed_page = bs(raw_page.content, 'html.parser')
+        # make request and parse returned html.
+
+        print(f"received {page} info in approx {timer.stop()} seconds...")
+        # display receipt notification.
+
+        return parsed_page
+        # return parsed page results. 
+
+    def typeScrape(self):
+    # scrape weapon types.
+
+        main_weapon_page = self.parsePage("Weapons")
+        raw_type_list = main_weapon_page.findAll("h3")
+        # navigate to weapons page and get weapon types. 
+
+        for entry in raw_type_list:
+        # loop through types.
+
+            if entry.text == "How to choose a weapon in Dark Souls?" or \
+                entry.text == "\nJoin the page discussion\nTired of anon "+\
+                "posting? Register!\n":
+                    pass
+            # filter out results that arent weapon types. 
+
+            elif entry.text == "Whips & Flails":
+                self.weapon_types.append("Whips")
+            # change "whips & flails" entry to just "whips" for proper navigation.
+
+            elif entry.text == "Flames, Talismans & Chimes":
+                self.weapon_types.append("Flames")
+                self.weapon_types.append("Talismans")
+                self.weapon_types.append("Chimes")
+            # split "flames, talismans & chimes" entry into 3 seperate entries.
  
-        else:
-            typeList.append(entry.text)
-        # add entry to type list. 
+            else:
+                self.weapon_types.append(entry.text)
+            # add entry to type list. 
 
-    return typeList
-    # return usable list of weapon types.
+        self.weaponScrape()
+        # scrape weapon info.
 
-def weaponTableScraper(weaponTypeList):
-# scrape table info from weapon tables and add info to weaponEntries list.
+    def weaponScrape(self):
+    # scrape weapon info.
 
-    listLength = int(len(weaponTypeList))
-    halfPoint = int(listLength / 2)
-    listOne = list(weaponTypeList[0 : halfPoint])
-    listTwo = list(weaponTypeList[halfPoint : listLength])
-    # divide list into 2 for multithreading to increase execution speed.
-
-    thread1 = threading.Thread(target= scraper, args= (listOne,))
-    thread2 = threading.Thread(target= scraper, args= (listTwo,))
-    thread1.start()
-    thread2.start()
-    thread1.join()
-    thread2.join()
-    # create 2 threads, run scrapers simultaneously then wait to finish.
-
-def scraper(typeList):
-# scrape type pages for weapon information.
-
-    for weaponType in typeList:
-        weaponTypePage = pageParser(weaponType)
-        weaponTable = weaponTypePage.find("tbody")
-        tableRows = weaponTable.findAll("tr")
+        for weapon_type in self.weapon_types:
+            weapon_type_page = self.parsePage(weapon_type)
+            weapon_table = weapon_type_page.find("tbody")
+            table_rows = weapon_table.findAll("tr")
         # locate weapon table and rows. 
 
-        for row in tableRows:
-            individualEntry = []
-            cells = row.findAll("td")
-            rawWeaponName = cells[0].text
-            weaponName = rawWeaponName.strip()
-            individualEntry.append(weaponName)
-            individualEntry.append(weaponType)
-        # weapon name and type parsed from table row. 
+            for row in table_rows:
+                individual_entry = []
+                cells = row.findAll("td")
+                raw_weapon_name = cells[0].text
+                weapon_name = raw_weapon_name.strip()
+                individual_entry.append(weapon_name)
+                individual_entry.append(weapon_type)
+            # weapon name and type parsed from table row. 
 
-            cellNumber = 0
-            for cell in cells:
-                if cellNumber < 1:
-                    pass
-                elif cellNumber > 6:
-                    break
-                else:
-                    rawCell = cell.text.strip()
-                    splitCell = rawCell.split(" ")
-                    try:
-                        damageValue = int(splitCell[0])
-                    except:
-                        damageValue = int(0)
-            # damage values parsed from table cell. 
+                cell_number = 0
+                for cell in cells:
+                    if cell_number < 1:
+                        pass
+                    elif cell_number > 6:
+                        break
+                    else:
+                        raw_cell = cell.text.strip()
+                        split_cell = raw_cell.split(" ")
+                        try:
+                            damage_value = int(split_cell[0])
+                        except:
+                            damage_value = int(0)
+                # damage values parsed from table cell. 
 
-                    individualEntry.append(damageValue)
-                    # append damage value to weapon entry. 
+                        individual_entry.append(damage_value)
+                        # append damage value to weapon entry. 
 
-                cellNumber += 1
-                # increment counter. 
+                    cell_number += 1
+                    # increment counter. 
 
-            weaponEntries.append(individualEntry)
-            print(f'processed {individualEntry[0]}.')
-            # append full weapon entry to weapon entry list.
+                self.weapon_entries.append(individual_entry)
+                # append full weapon entry to weapon entry list.
+        
+        print(f"finished scrape in approx {self.timer.stop()} seconds.")
+        # stop timer and display finish time notification.
 
-def logOutput():
-# takes nested list and writes info to .tsv file.
+        self.logOutput()
+        # log output to csv file. 
 
-    file = open(TSV_FILE, "w")
-    # open file to write. 
+    def logOutput(self):
+    # creat csv file to store weapon info.
 
-    file.write("Name\tType\tPhysical DMG\tMagic DMG\tFire DMG\tLightning DMG"+
-                "\tDark DMG\tCrit DMG\n")
-    # write column headings before contents.
-    
-    for row in weaponEntries:
-        file.write(f"{row[0]}\t{row[1]}\t{row[2]}\t{row[3]}\t{row[4]}\t" +
-                    f"{row[5]}\t{row[6]}\t{row[7]}\n")
-    # write values to table. 
+        csv_file = open(self.CSV_LOG, encoding="utf-8", mode="w")
+        # open file to write. 
 
-    file.close()
-    # close file. 
+        file_writer = writer(csv_file, delimiter="\t", lineterminator="\n")
+        # create csv writer. tab delimited.
 
-def pageParser(page):
-# go to desired page on ds3 wiki and return parsed page object.
+        file_writer.writerow([  "Name", "Type", "Physical DMG", "Magic DMG",
+                                "Fire DMG", "Lightning DMG", "Dark DMG",
+                                "Crit DMG"])
+        # write column headings. 
 
-    url = f'{DS3_WIKI}{page.replace(" ", "+")}'
-    # construct url.
+        for row in self.weapon_entries:
+            file_writer.writerow(row)
+        # write weapon entries to csv file. 
 
-    time.sleep(TIME_DELAY)
-    # pause to prevent throttling. 
+        csv_file.close()
+        # close file. 
 
-    startTime = time.time()
-    print(f'requesting {page} page...')
-    # display requesting status and start timer.
-
-    rawPage = requests.get(url)
-    parsedPage = BeautifulSoup(rawPage.content, 'html.parser')
-    # make request and parse resulting html.
-
-    elapsedTime = time.time() - startTime
-    print('received {} page info in {:.2f} seconds.'.format(page, elapsedTime))
-    # display page receipt and display total request time. 
-
-    return parsedPage
-    # return parsed results. 
-
-main()
+DS = DarkSouls3WeaponScraper()

@@ -1,0 +1,223 @@
+Name	Type	Physical DMG	Magic DMG	Fire DMG	Lightning DMG	Dark DMG	Crit DMG
+Parrying Dagger	Daggers	60	0	0	0	0	110
+Harpe	Daggers	62	0	0	0	0	100
+Dagger	Daggers	65	0	0	0	0	130
+Brigand Twindaggers	Daggers	55	0	0	0	0	125
+Scholar's Candlestick	Daggers	58	0	0	0	0	115
+Bandit's Knife	Daggers	79	0	0	0	0	110
+Handmaid's Dagger	Daggers	85	0	0	0	0	110
+Mail Breaker	Daggers	89	0	0	0	0	125
+Corvian Greatknife	Daggers	93	0	0	0	0	110
+Tailbone Short Sword	Daggers	106	0	0	0	0	110
+Rotten Ghru Dagger	Daggers	64	0	0	0	0	100
+Murky Hand Scythe	Daggers	72	0	0	0	22	100
+Aquamarine Dagger	Daggers	67	67	0	0	0	100
+Long Sword	Straight Swords	110	0	0	0	0	100
+Sunlight Straight Sword	Straight Swords	112	0	0	0	0	100
+Broken Straight Sword	Straight Swords	70	0	0	0	0	100
+Broadsword	Straight Swords	117	0	0	0	0	100
+Astora Straight Sword	Straight Swords	129	0	0	0	0	100
+Lothric Knight Sword	Straight Swords	103	0	0	0	0	110
+Irithyll Straight Sword	Straight Swords	124	0	0	0	0	100
+Shortsword	Straight Swords	99	0	0	0	0	110
+Cleric's Candlestick	Straight Swords	70	77	0	0	0	100
+Barbed Straight Sword	Straight Swords	111	0	0	0	0	100
+Dark Sword	Straight Swords	115	0	0	0	0	100
+Gotthard Twinswords	Straight Swords	100	0	0	0	0	100
+Lothric's Holy Sword	Straight Swords	107	0	0	0	0	100
+Anri's Straight Sword	Straight Swords	117	0	0	0	0	100
+Morion Blade	Straight Swords	131	0	0	0	0	100
+Valorheart	Straight Swords	120	0	0	0	0	100
+Ringed Knight Straight Sword	Straight Swords	120	0	11	0	0	100
+Claymore	Greatswords	138	0	0	0	0	100
+Bastard Sword	Greatswords	138	0	0	0	0	100
+Hollowslayer Greatsword	Greatswords	145	0	0	0	0	100
+Executioner's Greatsword	Greatswords	131	0	0	0	0	100
+Black Knight Sword	Greatswords	173	0	0	0	0	100
+Flamberge	Greatswords	158	0	0	0	0	100
+Wolf Knight's Greatsword	Greatswords	126	0	0	0	0	100
+Wolnir's Holy Sword	Greatswords	151	0	0	0	0	100
+Greatsword of Judgement	Greatswords	101	67	0	0	0	100
+Moonlight Greatsword	Greatswords	69	130	0	0	0	100
+Storm Ruler	Greatswords	110	0	0	0	0	100
+Firelink Greatsword	Greatswords	119	0	80	0	0	100
+Twin Princes' Greatsword	Greatswords	118	0	73	0	0	100
+Drakeblood Greatsword	Greatswords	83	65	0	65	0	100
+Onyx Blade	Greatswords	80	0	0	0	115	100
+Gael's Greatsword	Greatswords	147	0	0	0	0	100
+Zweihander	Ultra Greatswords	145	0	0	0	0	100
+Greatsword	Ultra Greatswords	159	0	0	0	0	100
+Farron Greatsword	Ultra Greatswords	125	0	0	0	0	100
+Fume Ultra Greatsword	Ultra Greatswords	149	0	0	0	0	100
+Profaned Greatsword	Ultra Greatswords	161	0	0	0	0	100
+Black Knight Greatsword	Ultra Greatswords	185	0	0	0	0	100
+Cathedral Knight Greatsword	Ultra Greatswords	149	0	0	0	0	100
+Lorian's Greatsword	Ultra Greatswords	151	0	79	0	0	100
+Lothric Knight Greatsword	Ultra Greatswords	131	0	0	87	0	100
+Astora Greatsword	Ultra Greatswords	132	0	0	0	0	100
+Ringed Knight Paired Greatswords	Ultra Greatswords	185	0	11	0	0	100
+Scimitar	Curved Swords	90	0	0	0	0	100
+Pontiff Knight Curved Sword	Curved Swords	123	0	0	0	0	100
+Falchion	Curved Swords	117	0	0	0	0	100
+Sellsword Twinblades	Curved Swords	99	0	0	0	0	100
+Warden Twinblades	Curved Swords	93	0	0	0	0	100
+Shotel	Curved Swords	104	0	0	0	0	100
+Dancer's Enchanted Swords	Curved Swords	79	62	62	0	0	100
+Storm Curved Sword	Curved Swords	110	0	0	0	0	100
+Carthus Curved Sword	Curved Swords	115	0	0	0	0	100
+Carthus Shotel	Curved Swords	106	0	0	0	0	100
+Rotten Ghru Curved Sword	Curved Swords	103	0	0	0	0	100
+Painting Guardian's Curved Sword	Curved Swords	88	0	0	0	0	100
+Crescent Moon Sword	Curved Swords	78	78	0	0	0	100
+Follower Sabre	Curved Swords	112	0	0	0	0	100
+Demon's Scar	Curved Swords	0	0	99	0	0	110
+Murakumo	Curved Greatswords	132	0	0	0	0	100
+Carthus Curved Greatsword	Curved Greatswords	122	0	0	0	0	100
+Exile Greatsword	Curved Greatswords	148	0	0	0	0	100
+Old Wolf Curved Sword	Curved Greatswords	155	0	0	0	0	100
+Harald Curved Greatsword	Curved Greatswords	140	0	0	0	0	100
+Darkdrift	Katanas	134	0	0	0	0	100
+Washing Pole	Katanas	121	0	0	0	0	100
+Uchigatana	Katanas	115	0	0	0	0	100
+Chaos Blade	Katanas	103	0	0	0	0	100
+Black Blade	Katanas	122	0	0	0	0	100
+Onikiri and Ubadachi	Katanas	104	0	0	0	0	100
+Bloodlust	Katanas	105	0	0	0	0	100
+Frayed Blade	Katanas	101	0	0	0	41	100
+Estoc	Thrusting Swords	105	0	0	0	0	100
+Rapier	Thrusting Swords	95	0	0	0	0	130
+Crystal Sage's Rapier	Thrusting Swords	55	82	0	0	0	100
+Irithyll Rapier	Thrusting Swords	116	0	0	0	0	110
+Ricard's Rapier	Thrusting Swords	97	0	0	0	0	100
+Crow Quills	Thrusting Swords	98	0	0	0	0	120
+Battle Axe	Axes	125	0	0	0	0	100
+Hand Axe	Axes	110	0	0	0	0	100
+Thrall Axe	Axes	104	0	0	0	0	100
+Dragonslayer's Axe	Axes	90	0	0	90	0	100
+Butcher Knife	Axes	95	0	0	0	0	100
+Brigand Axe	Axes	124	0	0	0	0	100
+Winged Knight Twinaxes	Axes	122	0	0	0	0	100
+Eleonora	Axes	156	0	0	0	0	100
+Man Serpent Hatchet	Axes	125	0	0	0	0	100
+Millwood Battle Axe	Axes	135	0	0	0	0	100
+Greataxe	Greataxes	188	0	0	0	0	100
+Demon's Greataxe	Greataxes	157	0	88	0	0	100
+Great Machete	Greataxes	167	0	0	0	0	100
+Yhorm's Great Machete	Greataxes	185	0	0	0	0	100
+Dragonslayer Greataxe	Greataxes	203	0	0	74	0	100
+Black Knight Greataxe	Greataxes	216	0	0	0	0	100
+Earth Seeker	Greataxes	154	0	0	0	0	100
+Mace	Hammers	115	0	0	0	0	100
+Club	Hammers	108	0	0	0	0	100
+Morning Star	Hammers	122	0	0	0	0	100
+Reinforced Club	Hammers	110	0	0	0	0	100
+Drang Hammers	Hammers	110	0	0	0	0	100
+Heysel Pick	Hammers	93	70	0	0	0	100
+Blacksmith Hammer	Hammers	105	0	0	0	0	100
+Warpick	Hammers	113	0	0	0	0	100
+Large Club	Great Hammers	148	0	0	0	0	100
+Gargoyle Flame Hammer	Great Hammers	122	0	100	0	0	100
+Great Club	Great Hammers	152	0	0	0	0	100
+Vordt's Great Hammer	Great Hammers	176	0	0	0	0	100
+Great Mace	Great Hammers	185	0	0	0	0	100
+Morne's Great Hammer	Great Hammers	200	0	0	0	0	100
+Great Wooden Hammer	Great Hammers	103	0	0	0	0	100
+Smough's Great Hammer	Great Hammers	205	0	0	0	0	100
+Old King's Great Hammer	Great Hammers	180	0	69	0	0	100
+Pickaxe	Great Hammers	140	0	0	0	0	100
+Dragon Tooth	Great Hammers	188	0	0	0	0	100
+Spiked Mace	Great Hammers	149	0	0	0	0	100
+Quakestone Hammer	Great Hammers	189	0	0	0	0	100
+Ledo's Great Hammer	Great Hammers	170	0	0	0	0	100
+Caestus	Fist & Claws	91	0	0	0	0	100
+Demon's Fist	Fist & Claws	111	0	77	0	0	100
+Dark Hand	Fist & Claws	88	0	0	0	150	100
+Claw	Fist & Claws	86	0	0	0	0	110
+Manikin Claws	Fist & Claws	81	0	0	0	0	110
+Crow Talons	Fist & Claws	91	0	0	0	0	110
+Spear	Spears & Pikes	104	0	0	0	0	100
+Tailbone Spear	Spears & Pikes	118	0	0	0	0	100
+Winged Spear	Spears & Pikes	95	0	0	0	0	100
+Drang Twinspears	Spears & Pikes	100	0	0	0	0	100
+Arstor's Spear	Spears & Pikes	118	0	0	0	0	100
+Four-Pronged Plow	Spears & Pikes	105	0	0	0	0	100
+Saint Bident	Spears & Pikes	98	0	0	0	0	100
+Rotten Ghru Spear	Spears & Pikes	104	0	0	0	0	100
+Partizan	Spears & Pikes	108	0	0	0	0	100
+Yorshka's Spear	Spears & Pikes	98	0	0	0	0	100
+Gargoyle Flame Spear	Spears & Pikes	103	0	90	0	0	100
+Dragonslayer Swordspear	Spears & Pikes	128	0	0	34	0	0
+Dragonslayer Spear	Spears & Pikes	113	0	0	70	0	100
+Golden Ritual Spear	Spears & Pikes	73	77	0	0	0	100
+Soldering Iron	Spears & Pikes	39	0	93	0	0	100
+Lothric Knight Long Spear	Spears & Pikes	112	0	0	0	0	100
+Greatlance	Spears & Pikes	129	0	0	0	0	100
+Pike	Spears & Pikes	105	0	0	0	0	100
+Follower Javelin	Spears & Pikes	106	0	0	0	0	100
+Ringed Knight Spear	Spears & Pikes	126	0	12	0	0	0
+Lothric War Banner	Spears & Pikes	100	0	0	0	0	100
+Halberd	Halberds	125	0	0	0	0	100
+Lucerne	Halberds	126	0	0	0	0	100
+Winged Knight Halberd	Halberds	135	0	0	0	0	100
+Red Hilted Halberd	Halberds	130	0	0	0	0	100
+Black Knight Glaive	Halberds	150	0	0	0	0	100
+Gundyr's Halberd	Halberds	145	0	0	0	0	100
+Immolation Tinder	Halberds	118	0	75	0	0	100
+Crescent Axe	Halberds	119	0	0	0	0	100
+Glaive	Halberds	141	0	0	0	0	100
+Splitleaf Greatsword	Halberds	132	0	0	0	0	100
+Crucifix of the Mad King	Halberds	124	0	0	0	0	74
+Great Scythe	Reapers	105	0	0	0	0	100
+Pontiff Knight Great Scythe	Reapers	100	0	0	0	0	100
+Great Corvian Scythe	Reapers	97	0	0	0	0	100
+Friede's Great Scythe	Reapers	110	77	0	0	0	100
+Whip	Whips	90	0	0	0	0	100
+Notched Whip	Whips	95	0	0	0	0	100
+Witch's Locks	Whips	77	0	80	0	0	100
+Spotted Whip	Whips	102	0	0	0	0	100
+Rose of Ariandel	Whips	79	0	0	0	0	100
+Short Bow	Bows	77	0	0	0	0	100
+Longbow	Bows	82	0	0	0	0	100
+Black Bow of Pharis	Bows	67	0	0	0	0	100
+Dragonrider Bow	Bows	110	0	0	0	0	100
+Composite Bow	Bows	73	0	0	0	0	100
+Darkmoon Longbow	Bows	36	44	0	0	0	100
+White Birch Bow	Bows	82	0	0	0	0	100
+Dragonslayer Greatbow	Greatbows	126	0	0	0	0	100
+Onislayer Greatbow	Greatbows	111	0	0	0	0	100
+Millwood Greatbow	Greatbows	139	0	0	0	0	100
+Light Crossbow	Crossbows	64	0	0	0	0	100
+Knight's Crossbow	Crossbows	40	0	0	40	0	100
+Arbalest	Crossbows	78	0	0	0	0	100
+Sniper Crossbow	Crossbows	70	0	0	0	0	100
+Avelyn	Crossbows	64	0	0	0	0	100
+Heavy Crossbow	Crossbows	72	0	0	0	0	100
+Repeating Crossbow	Crossbows	83	0	0	0	0	100
+Sorcerer's Staff	Staves	60	0	0	0	0	100
+Court Sorcerer's Staff	Staves	60	0	0	0	0	100
+Heretic's Staff	Staves	63	0	0	0	0	100
+Witch Tree Branch	Staves	57	0	0	0	0	100
+Sage's Crystal Staff	Staves	84	0	0	0	0	100
+Izalith Staff	Staves	120	0	0	0	0	100
+Storyteller's Staff	Staves	60	0	0	0	0	100
+Archdeacon Great Staff	Staves	89	0	0	0	0	100
+Man-Grub's Staff	Staves	90	0	0	0	0	100
+Mendicant's Staff	Staves	60	0	0	0	0	100
+Preacher's Right Arm	Staves	100	0	0	0	0	100
+Murky Longstaff	Staves	86	0	0	0	20	100
+Pyromancy Flame	Flames	0	0	100	0	0	100
+Pyromancer's Parting Flame	Flames	0	0	110	0	0	100
+Demon's Scar	Flames	0	0	99	0	0	110
+Talisman	Talismans	52	0	0	0	0	100
+Saint's Talisman	Talismans	52	0	0	0	0	100
+Sunlight Talisman	Talismans	52	0	0	0	0	100
+White Hair Talisman	Talismans	73	0	79	0	0	100
+Sunless Talisman	Talismans	74	0	0	0	0	0
+Canvas Talisman	Talismans	52	0	0	0	0	100
+Priest's Chime	Chimes	52	0	0	0	0	100
+Cleric's Sacred Chime	Chimes	52	0	0	0	0	100
+Caitha's Chime	Chimes	74	0	0	0	0	100
+Saint-tree Bellvine	Chimes	52	0	0	0	0	100
+Crystal Chime	Chimes	73	0	0	0	0	100
+Yorshka's Chime	Chimes	54	0	0	0	0	100
+Sacred Chime of Filianore	Chimes	74	0	0	0	0	100
